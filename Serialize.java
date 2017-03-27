@@ -14,7 +14,12 @@ class Serialize {
      */
 	public static void serialize(GenNode tree, PrintStream outputFile) throws IOException 
 	{
-
+		if (tree != null) {
+			outputFile.print(tree.element());
+			serialize(tree.leftchild(), outputFile);
+			outputFile.print(')');
+			serialize(tree.rightsib(), outputFile);
+		}
 		
 	}
 
@@ -26,6 +31,7 @@ class Serialize {
 	 */
 	public static GenNode dserialize(PushbackReader inputFile) throws IOException 
 	{
+		
 		return null;
 	}
 
